@@ -26,7 +26,7 @@
     <div id="form-validation" class="card">
         <div class="title title-purple">Form Validation</div>
         <div id="form-div">
-            <form method="post" id="signup">
+            <form method="post" id="signup" action="signin.php">
                 <fieldset id="account">
                     <p class="heading heading-purple">Account</p>
                     <i class="material-icons">perm_identity</i>
@@ -39,13 +39,14 @@
                     <input type="email" name="email" id="email" placeholder="Email Address"><br/>
                     <i class="material-icons">lock</i>
                     <input type="password" name="password" id="pass" placeholder="Password"><br/>
-                    <p id="message"></p>
                     <i class="material-icons">lock</i>
                     <input type="password" name="confirm-password" id="confirm-pass"
                            placeholder="Confirm Password"><br/>
+                    <p id="message"></p>
                 </fieldset>
                 <fieldset>
                     <p class="heading heading-purple">Date of Birth</p>
+                    <p id="message2"></p>
                     <input type="text" name="date" id="date" placeholder="DD">
                     <input type="text" name="month" id="month" placeholder="MM">
                     <input type="text" name="year" id="year" placeholder="YYYY">
@@ -55,17 +56,18 @@
                     <input type="radio" name="gender" id="gender-male" value="male" checked>
                     <label for="gender-male">Male</label> <br/>
                     <input type="radio" name="gender" id="gender-female" value="female">
-                    <label for="gender-male">Female</label>
+                    <label for="gender-female">Female</label>
                 </fieldset>
                 <div id="combo"></div>
                 <fieldset>
                     <p class="heading heading-purple"> Interests</p>
-                    <input type="checkbox" name="interest1" value="landscapes"> Landscapes <br/>
-                    <input type="checkbox" name="interest2" value="fashion"> Fashion <br/>
-                    <input type="checkbox" name="interest3" id="cities" value="cities"> Cities <br/>
-                    <input type="checkbox" name="interest4" id="food" value="food"> Food <br/>
+                    <input type="checkbox" name="interests[]" id="landscapes" value="landscapes"> Landscapes <br/>
+                    <input type="checkbox" name="interests[]" id="fashion" value="fashion"> Fashion <br/>
+                    <input type="checkbox" name="interests[]" id="cities" value="cities"> Cities <br/>
+                    <input type="checkbox" name="interests[]" id="food" value="food"> Food <br/>
                 </fieldset>
-                <button id="submit" class="action-button title-purple">sign up</button>
+                <button type="submit" id="submit" class="action-button title-purple" onclick="validateInputs()">sign up</button>
+                <p id="message3"></p>
             </form>
         </div>
 

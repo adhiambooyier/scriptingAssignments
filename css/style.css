@@ -53,7 +53,6 @@ body {
 
 }
 
-
 #form-validation {
 
 }
@@ -79,23 +78,26 @@ body {
     border: 1px solid #e5e5e5;
     border-radius: 3px;
 }
+
 #account input {
     width: 70%;
 }
 
-.action-button{
+.action-button {
     border: none;
-    border-radius: 5px ;
+    border-radius: 5px;
     text-transform: uppercase;
     color: #ffffff;
     text-align: center;
     display: inline-block;
-    padding: 10px 30px ;
+    padding: 10px 30px;
 }
-select{
+
+select {
     font-family: "Raleway", sans-serif;
     font-weight: 200;
 }
+
 #js-events {
     text-align: center;
 }

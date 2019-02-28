@@ -63,14 +63,55 @@ document.getElementById("confirm-pass").addEventListener("keyup", function (even
     console.log(this.value);
 });
 
-/*
-function confirmPassword() {
-    var pass = document.forms["signup"]["pass"].value;
-    var confirm_pass = document.forms["signup"]["confirm-pass"].value;
+var ageMessage = document.getElementById("message2");
+var birthDate = document.getElementById("year").value;
+if ((Date() - birthDate) <= 12) {
+    ageMessage.innerHTML = "<br> You need to be older than 12 to sign up"
+}
 
-    if (confirm_pass != pass) {
-        signupForm.innerHTML += "<br> The passwords do not match";
+function validateInputs() {
+    var validationMessage = document.getElementById("message3");
+
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var pass = document.getElementById("pass").value;
+    var confirmPass = document.getElementById("confirm-pass").value;
+    var date = document.getElementById("date").value;
+    var month = document.getElementById("month").value;
+    var year = document.getElementById("year").value;
+    var genderMale = document.getElementById("gender-male").value;
+    var genderFemale = document.getElementById("gender-female").value;
+    var originContinent = document.getElementById("origin-continent").value;
+    /*var landscapes = document.getElementById("landscapes").value;
+    var fashion = document.getElementById("fashion").value;
+    var cities = document.getElementById("cities").value;
+    var food = document.getElementById("food").value;*/
+
+    if (fname != ""
+        && lname !== ""
+        && lname !== ""
+        && phone !== ""
+        && email !== ""
+        && pass !== ""
+        && confirmPass !== ""
+        && date !== ""
+        && month !== ""
+        && year !== ""
+        || genderMale !== ""
+        || genderFemale !== ""
+        && originContinent !== ""
+       /* || landscapes !== ""
+        || confirmPass !== ""
+        || fashion !== ""
+        || food !== ""*/
+    ) {
+        validationMessage.innerHTML = "<br> successful"
+        //return true;
     } else {
-        signupForm.innerHTML += "<br> The passwords match";
+        validationMessage.innerHTML = "<br> Please fill out all the fields"
     }
-}*/
+}
+    
+
