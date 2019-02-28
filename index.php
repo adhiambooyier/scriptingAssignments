@@ -26,7 +26,7 @@
     <div id="form-validation" class="card">
         <div class="title title-purple">Form Validation</div>
         <div id="form-div">
-            <form method="post" id="signup" action="signin.php">
+            <form method="post" id="signup" action="signin.php" onsubmit="return validateInputs()">
                 <fieldset id="account">
                     <p class="heading heading-purple">Account</p>
                     <i class="material-icons">perm_identity</i>
@@ -66,7 +66,7 @@
                     <input type="checkbox" name="interests[]" id="cities" value="cities"> Cities <br/>
                     <input type="checkbox" name="interests[]" id="food" value="food"> Food <br/>
                 </fieldset>
-                <button type="submit" id="submit" class="action-button title-purple" onclick="validateInputs()">sign up</button>
+                <button type="submit" id="submit" class="action-button title-purple">sign up</button>
                 <p id="message3"></p>
             </form>
         </div>

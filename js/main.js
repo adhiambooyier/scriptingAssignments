@@ -60,17 +60,11 @@ document.getElementById("confirm-pass").addEventListener("keyup", function (even
     } else {
         message.innerHTML = "<br> The passwords match";
     }
-    console.log(this.value);
 });
-
-var ageMessage = document.getElementById("message2");
-var birthDate = document.getElementById("year").value;
-if ((Date() - birthDate) <= 12) {
-    ageMessage.innerHTML = "<br> You need to be older than 12 to sign up"
-}
 
 function validateInputs() {
     var validationMessage = document.getElementById("message3");
+    var ageMessage = document.getElementById("message2");
 
     var fname = document.getElementById("fname").value;
     var lname = document.getElementById("lname").value;
@@ -84,12 +78,8 @@ function validateInputs() {
     var genderMale = document.getElementById("gender-male").value;
     var genderFemale = document.getElementById("gender-female").value;
     var originContinent = document.getElementById("origin-continent").value;
-    /*var landscapes = document.getElementById("landscapes").value;
-    var fashion = document.getElementById("fashion").value;
-    var cities = document.getElementById("cities").value;
-    var food = document.getElementById("food").value;*/
 
-    if (fname != ""
+    if (fname !== ""
         && lname !== ""
         && lname !== ""
         && phone !== ""
@@ -99,19 +89,22 @@ function validateInputs() {
         && date !== ""
         && month !== ""
         && year !== ""
-        || genderMale !== ""
-        || genderFemale !== ""
         && originContinent !== ""
-       /* || landscapes !== ""
-        || confirmPass !== ""
-        || fashion !== ""
-        || food !== ""*/
+        && (genderFemale !== "" || genderMale !== "")
     ) {
-        validationMessage.innerHTML = "<br> successful"
-        //return true;
+        var dateDifference = (new Date() - new Date(year)) / (1000 * 60 * 60 * 24 * 365);
+        console.log(dateDifference);
+        if (dateDifference <= 12) {
+            ageMessage.innerHTML = "<br> You need to be older than 12 to sign up";
+        } else {
+            validationMessage.innerHTML = "<br> successful";
+            return true;
+        }
     } else {
-        validationMessage.innerHTML = "<br> Please fill out all the fields"
+        validationMessage.innerHTML = "<br> Please fill out all the fields";
     }
+
+    return false;
 }
     
 

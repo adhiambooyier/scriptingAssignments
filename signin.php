@@ -24,7 +24,7 @@ try {
         $origin = $_POST["origin"];
         $interest = $_POST["interests"];
 
-        echo " <br>The new user is: " . $fname . " " . $lname
+        echo "The new user is: " . $fname . " " . $lname
             . "<br>Phone: " . $phone
             . "<br>Email: " . $email
             . "<br>DOB: " . $date . "/" . $month . "/" . $year
@@ -32,7 +32,7 @@ try {
             . "<br>Origin: " . $origin;
 
 
-        echo "<br>selected interests: ";
+        echo "<br><br>Selected interests: ";
         foreach ($interest as $interests) {
             echo "<br>" . $interests;
         }
