@@ -56,9 +56,9 @@ document.getElementById("confirm-pass").addEventListener("keyup", function (even
     var pass = document.getElementById("pass").value;
 
     if (this.value != pass) {
-        message.innerHTML += "<br> The passwords do not match";
+        message.innerHTML = "<br> The passwords do not match";
     } else {
-        message.innerHTML += "<br> The passwords match";
+        message.innerHTML = "<br> The passwords match";
     }
     console.log(this.value);
 });
